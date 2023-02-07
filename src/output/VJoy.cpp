@@ -1,6 +1,6 @@
 #include <cstdint>
-#include <libevdev-1.0/libevdev/libevdev.h>
-#include <libevdev-1.0/libevdev/libevdev-uinput.h>
+#include <libevdev/libevdev.h>
+#include <libevdev/libevdev-uinput.h>
 #include "VJoy.hpp"
 #include "buttons_ref.h"
 #include "src/DeviceException.hpp"

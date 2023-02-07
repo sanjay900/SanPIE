@@ -9,8 +9,7 @@
 #include <libevdev-1.0/libevdev/libevdev.h>
 #include <fcntl.h>
 #include <unistd.h>
-#include "MIDIIn.hpp"
-#include "MIDISerialIn.hpp"
+#include "SerialIn.hpp"
 
 Input::Input(const std::string &lua_name, const std::string &name, sol::table &lua_table) {
     this->lua_table = lua_table;
@@ -37,12 +36,6 @@ Input *Input::create(std::string &name, sol::table &lua_table) {
     std::string type = typeOpt.value();
     if (type == "wii") {
         return new Wiimote(name, lua_table);
-    }
-    if (type == "midi") {
-        return new MIDIIn(name, lua_table);
-    }
-    if (type == "midi_serial") {
-        return new MIDISerialIn(name, lua_table);
     }
     if (type == "serial") {
         return new SerialIn(name, lua_table);

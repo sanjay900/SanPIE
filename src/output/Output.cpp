@@ -4,7 +4,6 @@
 
 #include "Output.hpp"
 #include "VKeyboard.hpp"
-#include "VMIDI.hpp"
 #include "SerialOut.h"
 #include "VJoy.hpp"
 
@@ -17,8 +16,6 @@ Output* Output::create(std::string &name, sol::table &lua_dev, sol::state &lua) 
     Output* out;
     if (type == "keyboard") {
         out = new VKeyboard(name, lua_dev, lua);
-    } else if(type == "midi") {
-        out = new VMIDI(name, lua_dev, lua);
     } else if(type == "serial"){
         out = new SerialOut(name, lua_dev);
     } else {

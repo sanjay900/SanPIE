@@ -6,7 +6,7 @@
 #include <linux/serial.h>
 #include <strings.h>
 #include <asm/ioctls.h>
-#include <stropts.h>
+#include <sys/ioctl.h>
 #include <curses.h>
 #include <zconf.h>
 #include <libudev.h>
