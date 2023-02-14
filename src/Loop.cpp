@@ -70,7 +70,7 @@ void Loop::tick() {
         long current = std::chrono::duration_cast<std::chrono::microseconds>(
                 std::chrono::system_clock::now().time_since_epoch()
         ).count();
-        if (lua["tick"]) {
+        if (lua["tick"].valid()) {
             lua["tick"](current-last);
         }
         last = current;

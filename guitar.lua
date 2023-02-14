@@ -34,9 +34,6 @@ v_devices = {
         axes = 8
     }
 }
-function tick(usec)
-
-end
 function disconnect_event(device)
     local name = device.name;
     local vDev = v_devices["v"..name];
