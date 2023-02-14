@@ -25,7 +25,7 @@ function axis_event(device, axis, value)
     if string.starts(name,"guitar") then
         if device.type == "Accelerometer" then
             if axis == 1 then
-                vDev.send_axis(4,math.min((value * 10) + (32768 / 2),0))
+                vDev.send_axis(4,value)
             end
         elseif axis == 0 then
             if value > 32767 / 2 then
